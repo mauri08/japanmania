@@ -2,6 +2,8 @@ from django.shortcuts import render
 from gestorDeProducto.models import Sucursal, Marca, Tipo, Producto, Anime
 
 # Create your views here.
+def login(request):
+    return render(request, 'login.html', {})
 
 def index(request):
     return render(request, 'index.html', {})

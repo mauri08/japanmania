@@ -7,6 +7,7 @@ urlpatterns = [
     path('registro', views.registro, name='registro'),
     path('sucursal', views.sucursal, name='sucursal'),
     path('producto', views.producto, name='producto'),
+    path('login', views.login, name='login'),
 
 #Forma de entrar a las paginas designadas
 
