@@ -11,8 +11,24 @@
 <br><br>
 {% endblock %}
 
-{% block contenido %}
-    {{ mensaje }}
+{% block contenido %} 
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-8">
+    {% if errores %}
+            <div class="alert alert-danger" role="alert">
+                {{ errores.cmbAnime }}
+                {{ errores.cmbMarca }}
+                {{ errores.cmbTipo }}
+            </div>  
+    {% endif %}
+    {% if mensaje %}
+            <div class="alert alert-success" role="alert">
+              {{ mensaje }}
+            </div>  
+    {% endif %}    
+        </div>
+    </div>
+    
 <form action="{% url 'producto' %}" id="miForm" method="post">
     {% csrf_token %}
     <div class="row">
@@ -90,7 +106,7 @@
             Codigo
         </div>
         <div class="col-12 col-md-5 col-xl-3">
-            <input type="text" name="txtCodigo" class="form-control" placeholder="Ej: Numero" value="{{ item.codigo }}">
+            <input type="text" name="txtCodigo" class="form-control" placeholder="Ej: Numero" value="{{ item.codigo_producto }}">
         </div>
     </div>
     <br>
@@ -173,9 +189,9 @@
  {% for fila in lista %}
                         <tr>
                             <td>{{ fila.id }}</td>
-                            <td>{{fila.anime}}</td>
-                            <td>{{ fila.marca }}</td>
-                            <td>{{ fila.tipo }}</td>
+                            <td>{{fila.anime|default_if_none:"No especificado"}}</td>
+                            <td>{{ fila.marca|default_if_none:"No especificado" }}</td>
+                            <td>{{ fila.tipo|default_if_none:"No especificado" }}</td>
                             <td>{{ fila.codigo_producto }}</td>
                             <td>{{ fila.descripcion }}</td>
                             <td>{{ fila.precioCosto }}</td>

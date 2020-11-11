@@ -68,6 +68,7 @@ def producto(request):
     cmbAnime = Anime.objects.all()
     cmbMarca = Marca.objects.all()
     cmbTipo = Tipo.objects.all()
+    errores = {}
 
     if request.method == "POST":
         #VALIDAR DATOS ANTES DE GUARDAR
@@ -87,26 +88,35 @@ def producto(request):
            anime = buscarPorId(Anime, idanime)
            marca = buscarPorId(Marca, idmarca)
            tipo = buscarPorId(Tipo, idtipo)
-           if id < 1:
-               Producto.objects.create(anime=anime, marca=marca, tipo=tipo, codigo_producto=codigo_producto, nombre=nombre, descripcion=descripcion, stock=stock, precioCosto=precioCosto, precioVenta=precioVenta)
-               mensaje = "El producto fue guardado correctamente!"
+
+           if anime is None:
+               errores['cmbAnime'] = "No selecciono el anime"
+           elif marca is None:
+               errores['cmbMarca'] = "No selecciono la marca"
+           elif tipo is None:
+               errores['cmbTipo'] = "No selecciono el tipo"
+          
            else:
-                item = Producto.objects.get(pk = id)
-                item.anime = anime
-                item.marca = marca
-                item.tipo = tipo
-                item.codigo_producto = codigo_producto
-                item.nombre = nombre
-                item.descripcion = descripcion
-                item.stock = stock
-                item.precioCosto = precioCosto
-                item.precioVenta = precioVenta
-                item.save()
-                item = {}
-           mensaje = "Operacion realizada con éxito!"
+               if id < 1:
+                   Producto.objects.create(anime=anime, marca=marca, tipo=tipo, codigo_producto=codigo_producto, nombre=nombre, descripcion=descripcion, stock=stock, precioCosto=precioCosto, precioVenta=precioVenta)
+                   mensaje = "El producto fue guardado correctamente!"
+               else:
+                   item = Producto.objects.get(pk = id)
+                   item.anime = anime
+                   item.marca = marca
+                   item.tipo = tipo
+                   item.codigo_producto = codigo_producto
+                   item.nombre = nombre
+                   item.descripcion = descripcion
+                   item.stock = stock
+                   item.precioCosto = precioCosto
+                   item.precioVenta = precioVenta
+                   item.save()
+                   item = {}
+                   mensaje = "Operacion realizada con éxito!"
        elif 'btnListar' in request.POST:
-           #lista = Producto.objects.all()
-           lista = Producto.objects.filter(nombre__contains = nombre)
+           lista = Producto.objects.all()
+           #lista = Producto.objects.filter(nombre__contains = nombre)
 
        elif 'btnBuscar' in request.POST:
            item = Producto.objects.get(pk = id)
@@ -119,7 +129,7 @@ def producto(request):
             
 
 
-    contexto = {'mensaje' : mensaje, 'lista' : lista, 'item' : item, 'cmbAnime' : cmbAnime, 'cmbMarca': cmbMarca, 'cmbTipo' : cmbTipo}
+    contexto = {'mensaje' : mensaje, 'lista' : lista, 'item' : item, 'cmbAnime' : cmbAnime, 'cmbMarca': cmbMarca, 'cmbTipo' : cmbTipo, 'errores' : errores}
     return render(request, 'producto.html', contexto)
 
 
