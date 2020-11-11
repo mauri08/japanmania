@@ -1,0 +1,125 @@
+{% extends "plantillaBase.html" %}
+{% load static %}
+
+{% block tituloPagina %}
+
+<!-- Informacion de bienvenidos------------------------------------------->
+<div class="row">
+    <div class="col-12 text-center pt-4">
+        <h3><strong>Bienvenido a la tienda de JapanMania</h3></strong>
+    </div>
+</div>
+{% endblock %}
+
+
+
+{% block contenido %}
+<div class="row">
+    <div class="col-8 offset-2 text-center pt-4">
+        <p>
+            <strong>tienda online de figuras de anime más conveniente y con más beneficios de Chile.
+                <br>
+            </strong>
+            Aquí encontrarás las últimas novedades de figuras de anime, figmas, nendoroids y mucho mas del
+            mercado. Todos nuestros productos son 100% originales, traídos directamente desde Japón.
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 text-center">
+        <hr>
+        <br>
+        <h3><strong>¿Porque preferirnos?</h3></strong>
+        <br>
+        <hr>
+    </div>
+</div>
+<br>
+<!-- Informacion de 4 columnas------------------------------------------->
+<div class="row">
+    <div class="col-sm-4 col-md-3">
+        <img src="{% static 'images/icono1.png' %}" width="35%" class="mx-auto d-block">
+        <h3 class="text-center"><strong>Confianza</strong></h3>
+        <p class="text-center">
+            Tenemos experiencia importando miles de productos 100% originales desde Japón desde 2011. Nuestros
+            cientos de clientes nos avalan.
+        </p>
+    </div>
+    <div class="col-sm-4 col-md-3">
+        <img src="{% static 'images/icono2.png' %}" width="35%" class="mx-auto d-block">
+        <h3 class="text-center"><strong>Seguridad</strong></h3>
+        <p class="text-center">
+            Todos nuestros productos son importados desde Japón con un envío con seguro y seguimiento en línea.
+            Siempre sabrás dónde está tu pedido.
+        </p>
+    </div>
+    <div class="col-sm-4 col-md-3">
+        <img src="{% static 'images/icono3.png' %}" width="35%" class="mx-auto d-block">
+        <h3 class="text-center"><strong>Precios bajos</strong></h3>
+        <p class="text-center">
+            Tenemos los precios más bajos y mejores beneficios del mercado chileno. ¡Compara y compruébalo!
+        </p>
+    </div>
+    <div class="col-sm-2 col-md-3">
+        <img src="{% static 'images/icono4.png' %}" width="35%" class="mx-auto d-block">
+        <h3 class="text-center"><strong>Mas beneficios</strong></h3>
+        <p class="text-center">
+            Además de nuestros precios bajos, con cada compra acumularás el 5% del total en saldo para tu
+            próximo pedido. ¡Nadie te da más!
+        </p>
+    </div>
+</div>
+<br>
+<hr>
+<div class="row">
+    <div class="col-12">
+        <br>
+        <h3 class="text-center"><strong>Proximamente!!!</strong></h3>
+        <br>
+    </div>
+</div>
+<!-- Mini galería de imagenes en formato card --------------------------------------------------------------->
+<div class="row">
+    <div class="card col-sm-6 col-md-4" style="width: 18rem;">
+        <img src="{% static 'images/im1.jpg' %}"  class="card-img-top">
+        <div class="card-body">
+            <h2><strong>Kanade Tachibana</strong></h2>
+            <p class="card-text">
+                <strong>
+                    <h6>Ángel con un traje elegante</h6>
+                </strong>
+                La heroína principal de Angel Beats, Kanade Tachibana, ha sido recreada en forma de figura a
+                escala con un nuevo atuendo elegante.
+
+            </p>
+        </div>
+    </div>
+    <div class="card col-sm-6 col-md-4" style="width: 18rem;">
+        <img src="{% static 'images/im2.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h2><strong>Megumin: Novela ligera Band of Thieves</strong></h2>
+            <p class="card-text">
+                <strong>
+                    <h6>¡Mi nombre es Megumin!</h6>
+                </strong>
+                Megumin ha sido recreada con su ropa de ladrona hecha a sí misma de pie galantemente. La expresión segura de Megumin se ha recreado fielmente en forma de figura.
+
+            </p>
+        </div>
+    </div>
+    <div class="card col-sm-12 col-md-4" style="width: 18rem;">
+        <img src="{% static 'images/im3.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h2><strong>Echidna: Tea Party</strong></h2>
+            <p class="card-text">
+                <strong>
+                    <h6>Ahora puedes hablar conmigo todo lo que quieras.</h6>
+                </strong>
+                Echidna tiene una expresión suave y tranquila en su rostro mientras disfruta de la fiesta del té. Su hermoso cabello blanco y su delgado atuendo han sido recreados con asombrosos detalles.
+
+            </p>
+        </div>
+    </div>
+</div>
+<br>
+{% endblock %}

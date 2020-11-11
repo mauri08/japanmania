@@ -1,0 +1,68 @@
+{% extends "plantillaBase2.html" %}
+
+{% block tituloPagina %}
+<div class="row text-center">
+    <div class="col-12" id="formulario">
+        <h1><strong>Formulario</strong></h1>
+    </div>
+</div>
+<br><br>
+{% endblock %}
+
+{% block contenido %}
+    <!-- Formulario --------------------------------------------------------------->
+
+    <form action="{% url 'registro' %}" id="miForm" method="post">
+        {% csrf_token %} 
+        <div class="row">
+            <div class="col-12 col-md-1 offset-md-4">
+                Nombre
+            </div>
+            <div class="col-12 col-md-5 col-xl-3">
+                <input type="text" name="txtNombre" class="form-control" placeholder="Ej: Mauricio Lopez"
+                    required>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-12 col-md-1 offset-md-4">
+                Direccion
+            </div>
+            <div class="col-12 col-md-5 col-xl-3">
+                <input type="text" name="txtRut" class="txtRut form-control" placeholder="Ej: 12345678-0"
+                    minlength="9" required maxlength="9">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-12 col-md-1 offset-md-4">
+                Telefono
+            </div>
+            <div class="col-12 col-md-5 col-xl-3">
+                <input type="text" name="txtNombre" class="txtNombre form-control" placeholder="Ej: Mauricio Lopez"
+                    required>
+            </div>
+        </div>
+        <br>
+        
+        <div class="row">
+            <div class="col-12 col-md-1 offset-md-4">
+                Encargado
+            </div>
+            <div class="col-12 col-md-5 col-xl-3">
+                <input type="text" name="txtTelefono" class="txtTelefono form-control" placeholder="Ej: 987456123"
+                    minlength="9" required>
+            </div>
+        </div>
+        
+        <br><br>
+        <div class="row">
+            <div class="col-12 col-md-1 offset-md-4 offset-xl-5 ">
+            </div>
+            <div class="col-12 col-md-3">
+                <input type="reset" name="btnLimpiar" class="btnLimpiar btn btn-dark" value="Limpiar">
+                <input type="submit" name="btnEnviar" class="btnEnviar btn btn-dark" value="Enviar">
+            </div>
+        </div>
+    </form>
+{% endblock %}

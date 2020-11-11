@@ -1,0 +1,112 @@
+{% extends "plantillaBase2.html" %}
+
+
+<!-- Bloques plantillaBase2-->
+{% block tituloPagina %}
+<div class="row text-center">
+    <div class="col-12" id="formulario">
+        <h1><strong>Registro de sucursales</strong></h1>
+    </div>
+</div>
+<br><br>
+{% endblock %}
+
+{% block contenido %}
+    {{ mensaje }}
+<form action="{% url 'sucursal' %}" id="miForm" method="post">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-12 col-md-1 offset-md-4">
+            Id
+        </div>
+        <div class="col-12 col-md-5 col-xl-3">
+            <input type="text" name="txtId" class="form-control" placeholder="Ej: Buscar algún dato" value="{{ item.id }}">
+        </div>
+        <div class="col-4 col-sm-2">
+            <input type="submit" name="btnBuscar" class="btnBuscar btn btn-warning" value="Buscar">
+        </div>
+    </div> 
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-12 col-md-1 offset-md-4">
+            Nombre
+        </div>
+        <div class="col-12 col-md-5 col-xl-3">
+            <input type="text" name="txtNombre" class="form-control" placeholder="Ej: Mauricio Lopez" value="{{ item.nombre }}">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-12 col-md-1 offset-md-4">
+            Direccion
+        </div>
+        <div class="col-12 col-md-5 col-xl-3">
+            <input type="text" name="txtDireccion" class="form-control" placeholder="Ej: Antonio Varas 1232, Santiago" value="{{ item.direccion }}">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-12 col-md-1 offset-md-4">
+            Telefono
+        </div>
+        <div class="col-12 col-md-5 col-xl-3">
+            <input type="text" name="txtTelefono" class="form-control" placeholder="Ej: 25634585" value="{{ item.telefono }}">
+        </div>
+    </div>
+    <br>
+    
+    <div class="row">
+        <div class="col-12 col-md-1 offset-md-4">
+            Encargado
+        </div>
+        <div class="col-12 col-md-5 col-xl-3">
+            <input type="text" name="txtEncargado" class="form-control" placeholder="Ej: Nose" value="{{ item.encargado }}">
+        </div>
+    </div>
+    
+    <br><br>
+    <div class="row">
+        <div class="col-12 col-md-1 offset-md-4 offset-xl-5 ">
+        </div>
+        <div class="col-12 col-md-3">
+            <input type="submit" name="btnGrabar" class="btnGrabar btn btn-dark" value="Grabar">
+            <input type="submit" name="btnListar" class="btnListar btn btn-dark" value="Listar">
+{% if item.id > 0 %}
+            <input type="submit" name="btnEliminar" class="btnEliminar btn btn-danger" value="Elimnar">
+{% endif %}
+        </div>
+    </div>
+</form>
+{% endblock %}
+<br><br>
+{% block listado %}
+{% if lista %}
+    <div class="row justify-content-center">
+        <div>
+            <div class="table-responsive">
+                <table>
+                    <thead class="table-active">
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Direccion</th>
+                        <th>Telefono</th>
+                        <th>Encargado</th>
+                    </thead>
+                    <tbody>
+ {% for fila in lista %}
+                        <tr>
+                            <td>{{ fila.id }}</td>
+                            <td>{{ fila.nombre }}</td>
+                            <td>{{ fila.direccion }}</td>
+                            <td>{{ fila.telefono }}</td>
+                            <td>{{ fila.encargado }}</td>
+                        </tr>
+ {% endfor %}                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{%endif%}
+{% endblock %}
