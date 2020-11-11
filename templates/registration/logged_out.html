@@ -1,0 +1,12 @@
+{% extends "plantillaBase2.html" %}
+{% block titulo %}
+	{{ 'Cierre de sesión'}}
+{% endblock %}
+{% block titulo2 %}
+	{{ 'Ha cerrado su sesión!'}}
+{% endblock %}
+{% block contenido %}
+<p>Cierre de sesión!</p>  
+
+<a href="{% url 'login'%}">Presione aquí para iniciar sesión.</a>
+{% endblock %}

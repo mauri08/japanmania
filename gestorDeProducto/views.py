@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from gestorDeProducto.models import Sucursal, Marca, Tipo, Producto, Anime
+from django.shortcuts import redirect
+from django.conf import settings
 
 # Create your views here.
-def login(request):
-    return render(request, 'login.html', {})
 
 def index(request):
+    if not request.user.is_authenticated:
+        return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
     return render(request, 'index.html', {})
 
 def registro(request):
