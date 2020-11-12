@@ -2,6 +2,8 @@ from django.shortcuts import render
 from gestorDeProducto.models import Sucursal, Marca, Tipo, Producto, Anime
 from django.shortcuts import redirect
 from django.conf import settings
+from django.contrib.auth.models import User
+from django.contrib.auth.hashers import make_password
 
 # Create your views here.
 
@@ -11,10 +13,15 @@ def index(request):
     return render(request, 'index.html', {})
 
 def registro(request):
-    nombre = ""
-
+    
     if request.method == "POST":
-        nombre = request.POST[""]
+        nombre = request.POST["txtNombre"]
+        correo = request.POST["txtCorreo"]
+        clave = request.POST["txtClave"]
+        User.objects.create(username=nombre, email=correo, password=make_password(clave))
+       
+        return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
+    return render(request, 'index.html', {})
 
 
     contexto = {}
