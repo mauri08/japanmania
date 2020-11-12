@@ -21,7 +21,7 @@ def registro(request):
         User.objects.create(username=nombre, email=correo, password=make_password(clave))
        
         return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
-    return render(request, 'index.html', {})
+    return render(request, 'registro.html', {})
 
 
     contexto = {}
