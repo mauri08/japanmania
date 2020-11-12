@@ -7,6 +7,9 @@ from django.contrib.auth.hashers import make_password
 
 # Create your views here.
 
+def productos(request):
+    return render(request, 'productos.html', {})
+
 def index(request):
     if not request.user.is_authenticated:
         return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))

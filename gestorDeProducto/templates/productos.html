@@ -1,0 +1,172 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="{% static 'css/style.css'%}">
+    <title>JapanMania</title>
+</head>
+
+<body>
+
+    <!-- Container ---------------------------------------------------------------------------- -->
+    <div class="container">
+
+        <!-- Navar -->
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">JapanMania</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../evaluacion 1 web/index.html">Inicio <span
+                                class="sr-only">(current)</span></a>
+                        <!-- Etiqueta de seleccion-->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../evaluacion 1 web/registro.html">Formulario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../evaluacion 1 web/productos.html">Productos</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <br>
+        <!-- Logo --------------------------------------------------------------->
+        <div class="row justify-content-center">
+            <img src="{% static 'images/prueba.PNG' %}" width="50%" class="my-4">
+        </div>
+
+        <!-- Formulario --------------------------------------------------------------->
+        <div class="row text-center">
+            <div class="col-12" id="formulario">
+                <h1><strong>Productos</strong></h1>
+            </div>
+        </div>
+        <br><br>
+
+        <!-- Productos --------------------------------------------------------------->
+        <div class="row">
+
+            <div class="card col-sm-4" style="width: 18rem;">
+                <img src="{% static 'images/galery1.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <h5 class="card-title">Raphtalia Bunny Style</h5>
+                    <p class="card-text">
+                    <h6><strong>¿¡Raphtalia con un traje de conejito !? </strong></h6>
+                    De la popular serie de anime "The Rising of the Shield Hero" viene una figura de la heroína
+                    semi-humana
+                    Raphtalia con un traje de conejito.
+                    </p>
+                    <a href="#" class="btn btn-primary">$179.000</a>
+                </div>
+            </div>
+
+
+            <div class="card col-sm-4" style="width: 18rem;">
+                <img src="{% static 'images/galery2.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Yurumari Rem & Ram</h5>
+                    <p class="card-text">
+                    <h6><strong>¡Presentamos una nueva serie de figuras de vinilo suave!</strong></h6>
+                    Presentando una nueva serie de figuras de vinilo blando. La serie tiene como objetivo recrear
+                    personajes en
+                    un adorable estilo chibi que puedes llevar contigo a cualquier parte.</p>
+                    <a href="#" class="btn btn-primary">$75.000</a>
+                </div>
+            </div>
+
+
+            <div class="card col-sm-4" style="width: 18rem;">
+                <img src="{% static 'images/galery3.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Kurumi Tokisaki</h5>
+                    <p class="card-text">
+                    <h6><strong>"Ufufu ... este kimono me queda bien, ¿no crees?"</strong></h6>¡De la serie de
+                    novelas ligeras "Date A Live" del Departamento Editorial de Fantasia Bunko de
+                    KADOKAWA viene una figura a escala 1/7 de la heroína Kurumi Tokisaki!</p>
+                    <a href="#" class="btn btn-primary">$210.000</a>
+                </div>
+            </div>
+
+
+            <div class="card col-sm-4" style="width: 18rem;">
+                <img src="{% static 'images/galery4.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">figma Racing Miku 2019</h5>
+                    <p class="card-text">
+                    <h6><strong>¡Una figura del personaje oficial del Proyecto Hatsune Miku!</strong></h6>
+                    ¡La edición 2019 del personaje oficial del Proyecto Hatsune Miku GT 2019, Racing Miku, se une a
+                    la serie figma!</p>
+                    <a href="#" class="btn btn-primary">$70.000</a>
+                </div>
+            </div>
+
+
+            <div class="card col-sm-4" style="width: 18rem;">
+                <img src="{% static 'images/galery5.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Stephanie Dola</h5>
+                    <p class="card-text">
+                    <h6><strong>¿Por qué ... por qué no puedo ganar?</strong></h6>
+                    De la serie de anime "No Game No Life" viene una figura a escala 1/7 de la Princesa de Imanity's
+                    Elchea Kingdom: ¡Stephanie Dola!</p>
+                    <a href="#" class="btn btn-primary">$210.000</a>
+                </div>
+            </div>
+
+
+            <div class="card col-sm-4" style="width: 18rem;">
+                <img src="{% static 'images/galery6.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">figma Naofumi Iwatani</h5>
+                    <p class="card-text">
+                    <h6><strong>Protegeré a mi grupo a pesar de todo.</strong></h6>De la serie de anime "The Rising
+                    of the Shield Hero" viene una figura de Naofumi Iwatani.</p>
+                    <a href="#" class="btn btn-primary">$85.000</a>
+                </div>
+            </div>
+            <br>
+            <!-- Footer --------------------------------------------------------------->
+            <footer>
+                <div class="col-sm-12">
+                    <div class="justify-content-md-center">
+
+                        <strong>
+                            <h5>©️Todos los derechos reservados</h5>
+                        </strong>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
